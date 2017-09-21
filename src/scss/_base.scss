@@ -1,0 +1,538 @@
+/**********************
+        Assets
+**********************/
+
+@import "assets/_colors";
+
+/**********************
+         Base
+**********************/
+
+html, body {
+  overflow-x:hidden
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+section {
+    box-sizing: border-box;
+    height: 100vh;
+    min-height: 768px;
+    min-width: 100vw;
+    width: 100vw;
+}
+h2 {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+p {
+    line-height: 1.5em;
+}
+
+/**********************
+    Hamburger menu
+**********************/
+
+.main-nav.mobile {
+    .nav-items {
+        align-items: center;
+        background-color: $peach;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        overflow: hidden;
+        position: fixed;
+        top: -1000px;
+        transition: all 1s;
+        width: 100%;
+        z-index: 25;
+        a {
+            color: #efefef;
+            font-size: 1.2em;
+            font-weight: normal;
+            letter-spacing: 2px;
+            line-height: 2em;
+            margin-bottom: 8px;
+            text-decoration: none;
+            text-transform: uppercase;
+            &:hover {
+                color: $sunny;
+            }
+        }
+    }
+    input[type=checkbox] {
+        opacity: 0;
+        position: fixed;
+        right: 25px;
+        top: 25px;
+        &:checked ~ .nav-items {
+            opacity: 1;
+            top: 0;
+        }
+        &:checked ~ .menu {
+            background: $sunny;
+            z-index: 26;
+            span {
+              transform: scale3d(0,1,1);
+            }
+            &:after{
+              transform: rotate3d(0,0,1,45deg);
+            }
+            &:before{
+              transform: rotate3d(0,0,1,-45deg);
+            }
+        }
+    }
+    .menu {
+        background: $peach;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: block;
+        height: 45px;
+        padding: 11px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 55px;
+        z-index: 27;
+        &:after,&:before {
+            background: #fff;
+            content: '';
+            height: 2.5px;
+            left: 24%;
+            position: absolute;
+            top: 46%;
+            transform-origin: 50% 50%;
+            transition: transform 0.5s;
+            width: 55%;
+        }
+        &:after{
+            transform: translate3d(0,-10px,0) scale3d(0.8,1,1);
+        }
+        &:before {
+            transform: translate3d(0,10px,0) scale3d(0.8,1,1);
+        }
+        span {
+            background: #f2f2f2;
+            height: 2.5px;
+            left: 29%;
+            overflow: hidden;
+            position: absolute;
+            top: 46%;
+            transition: all;
+            width: 43%;
+        }
+    }
+}
+
+/**********************
+         Home
+**********************/
+
+section.home {
+    align-items: center;
+    background-image: url('../img/video-img.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    .heading {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        h1 {
+            border: 2px solid #fff;
+            box-sizing: border-box;
+            color: #fff;
+            font-size: 2.5em;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 120px;
+            padding: 40px 25px;
+        }
+        img {
+            height: 50px;
+            opacity: 0.9;
+            position: absolute;
+            transition: 0.3s;
+            &:hover {
+                transform: translateY(15%);
+            }
+        }
+    }
+    video {
+        display: none;
+    }
+}
+
+/**********************
+         Info
+**********************/
+
+section.info {
+    align-items: flex-start;
+    display: flex;
+    padding-top: 20px;
+    img {
+        height: 270px;
+        margin: 110px 0 0 2%;
+        opacity: 0;
+        position: absolute;
+        transition: 0.5s;
+        z-index: 1;
+    }
+    .bg-block {
+        align-items: center;
+        background-image: url(../img/coachella.jpg);
+        background-position: 50% 40%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        justify-content: center;
+        margin-top: 50px;
+        position: relative;
+        width: 100%;
+        z-index: 0;
+        .text-block {
+            background-color: $midpeach;
+            box-sizing: border-box;
+            color: $purple;
+            height: auto;
+            left: 10px;
+            margin: 0 auto;
+            padding: 4% 8% 8% 8%;
+            position: absolute;
+            right: 10px;
+            top: 210px;
+            strong {
+                font-weight: 600;
+            }
+            a:not(.insta-link) {
+                color: $purple;
+                text-decoration: none;
+                transition: 0.3s;
+                &:hover {
+                    background-color: $peach;
+                    color: $sunny;
+                }
+            }
+        }
+        div.link {
+            align-items: center;
+            border: 2px solid #fff;
+            box-sizing: border-box;
+            display: flex;
+            height: 55px;
+            justify-content: center;
+            margin-top: 10px;
+            transition: 0.3s;
+            width: 100%;
+            &:hover {
+                border: 5px solid $sunny;
+            }
+            a.insta-link {
+                align-items: center;
+                color: $purple;
+                cursor: pointer;
+                display: flex;
+                font-size: 0.85em;
+                font-weight: 600;
+                height: 100%;
+                justify-content: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                width: 100%;
+            }
+        }
+        .deadline {
+            font-size: 0.7em;
+            padding-top: 15px;
+            text-align: right;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/**********************
+       Coachella
+**********************/
+
+section.coachella {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 30px;
+    .img-block {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        max-height: 70vh;
+        width: 90%;
+        img {
+            border: 20px solid $nude;
+            width: 90%;
+        }
+    }
+    .text-block {
+        box-sizing: border-box;
+        margin: 100px 0 0 0;
+        padding: 20px;
+        transition: 0.5s;
+        width: 90%;
+        p {
+            padding: 0;
+        }
+        div.link {
+            background-color: $peach;
+            box-sizing: border-box;
+            height: 60px;
+            margin-top: 15px;
+            position: relative;
+            text-align: center;
+            width: 100%;
+            a {
+                color: #fff;
+                height: 40px;
+                left: 0;
+                padding: 20px 0 0 0;
+                position: absolute;
+                text-decoration: none;
+                text-transform: uppercase;
+                top: 0;
+                width: 100%;
+                &:hover ~ div.hover {
+                    width: 100%;
+                }
+            }
+            div.hover {
+                background-color: $sunny;
+                height: 60px;
+                transition: width 0.3s ease;
+                width: 0;
+            }
+        }
+    }
+    .slide-in {
+        margin: 0;
+    }
+}
+
+/**********************
+ Top List & Most Recent
+**********************/
+
+section.top-list,
+section.most-recent {
+    padding: 10px 22px;
+}
+
+/**********************
+        Posts
+**********************/
+
+.posts {
+    height: 70vh;
+    position: relative;
+    width: 100%;
+    .single {
+        animation-duration: 150s;
+        animation-iteration-count: infinite;
+        animation-name: slideshow;
+        animation-timing-function: linear;
+        box-sizing: border-box;
+        display: inline-block;
+        max-width: 100%;
+        position: absolute;
+        transition: 0.1s ease-in;
+        img {
+            border: solid 6px white;
+            box-shadow: 0 0 20px rgba(32, 14, 17, 0.15);
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    @keyframes slideshow {
+        0%   {transform: translateX(110vw)}
+        100% {transform: translateX(-150vw)}
+    }
+}
+
+/**********************
+     Pop up window
+**********************/
+
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 500ms;
+    visibility: hidden;
+}
+.overlay::before {
+    color: #fff;
+    content: "\f057";
+    float: right;
+    font-family: 'FontAwesome';
+    font-size: 1.2em;
+    padding: 12px 12px 0 0;
+}
+.visible {
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+}
+.pop-up {
+    background: #fff;
+    border-radius: 5px;
+    margin: 45px auto;
+    padding: 20px;
+    position: relative;
+    transition: all 5s ease-in-out;
+    width: 85%;
+    img {
+        width: 100%;
+    }
+    p {
+        font-size: 0.8em;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+        transition: 0.3s;
+        &:hover{
+            color: $peach;
+        }
+    }
+    .data {
+        display: inline-block;
+        font-size: 0.9em;
+        margin-right: 10px;
+    }
+    i {
+        margin: 0 5px 3px 1px;
+        font-size: 0.9em;
+    }
+    div.link {
+        background-color: $peach;
+        box-sizing: border-box;
+        height: 40px;
+        margin-top: 15px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        a {
+            color: #fff;
+            font-size: 0.8em;
+            height: 20px;
+            left: 0;
+            padding: 12px 0 0 0;
+            position: absolute;
+            text-decoration: none;
+            text-transform: uppercase;
+            top: 0;
+            width: 100%;
+            &:hover ~ div.hover {
+                width: 100%;
+            }
+        }
+        div.hover {
+            background-color: $sunny;
+            height: 40px;
+            transition: width 0.3s ease;
+            width: 0;
+        }
+    }
+}
+
+
+/**********************
+         Footer
+**********************/
+
+footer.footer {
+    align-items: center;
+    background: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+    padding: 0 0 50px 0;
+    position: relative;
+    .logo, .palm, .social {
+        height: auto;
+        margin-bottom: 30px;
+    }
+    .palm {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        justify-content: center;
+        width: 100%;
+        svg {
+            bottom: 210px;
+            height: 180px;
+            position: absolute;
+            width: 100%;
+        }
+    }
+    .logo {
+        img {
+            height: auto;
+            width: 200px;
+        }
+        p {
+            font-size: 0.57em;
+            margin: 5px 0 0 0;
+        }
+    }
+    .social {
+        color: #833d8e;
+        font-size: 2em;
+        i {
+            cursor: pointer;
+            margin: 0 5px;
+            transition: 0.2s;
+            &:hover {
+                color: $sunny;
+            }
+        }
+    }
+    a.to-top {
+        background: $peach;
+        bottom: 0;
+        color: #fff;
+        font-size: 1.5em;
+        padding: 8px 21px;
+        position: fixed;
+        right: 0;
+        text-decoration: none;
+        transition: 0.3s;
+        visibility: hidden;
+        z-index: 27;
+        &:hover {
+            background: $sunny;
+        }
+    }
+}

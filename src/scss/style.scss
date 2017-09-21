@@ -1,0 +1,9 @@
+@import "normalize"; 
+@import "base";
+
+@media screen and (min-width:768px) {
+	@import "tablet";
+}
+@media screen and (min-width:1200px) {
+	@import "desktop";
+}

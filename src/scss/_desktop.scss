@@ -1,0 +1,233 @@
+/**********************
+         Base
+**********************/
+
+h2 {
+    font-size: 2em;
+}
+
+/**********************
+         Home
+**********************/
+
+section.home {
+    overflow: hidden;
+    position: relative;
+    .heading {
+        position: relative;
+        z-index: 2;
+        h1 {
+            font-size: 4.5em;
+            padding: 80px;
+        }
+    }
+    video {
+        display: block;
+        height: auto;
+        left: 0;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        width: auto;
+        z-index: 1;
+    }
+}
+
+/**********************
+    Scroll indicator
+**********************/
+
+.main-nav.desktop {
+    margin: 0;
+    position: fixed;
+    right: 31px;
+    top: 50%;
+    transform: translateY(-50%);
+    visibility: hidden;
+    z-index: 25;
+    input[type=checkbox], label {
+        display: none;
+    }
+    .nav-item p:after {
+        content: '\25CB';
+    }
+    .nav-item {
+        color: #999;
+        text-decoration: none;
+        font-size: 1.8em;
+        transition: color 0.3s;
+        display: block;
+    }
+    .nav-item p {
+        text-align: right;
+    }
+    .nav-item:hover p:after,
+    .nav-item.active p:after {
+        color: $peach;
+        content: '\25C9';
+        font-size: 0.6em;
+    }
+    .nav-item span {
+        background: #fff;
+        font-size: 0.55em;
+        margin-right: 10px;
+        opacity: 0;
+        padding: 6px 10px;
+        text-transform: uppercase;
+        transition: 0.2s;
+        visibility: hidden;
+    }
+    .nav-item:hover span {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/**********************
+     Section: Info
+**********************/
+
+section.info {
+    align-items: center;
+    display: flex;
+    img {
+        height: 600px;
+        margin: 300px 0 0 7%;
+        opacity: 0;
+        position: absolute;
+        transition: 0.5s;
+        z-index: 1;
+    }
+    .bg-block {
+        background-position: 50% 33%;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 0;
+        z-index: 0;
+        .text-block {
+            height: auto;
+            margin: 2% 10% 2% 0;
+            opacity: 0.97;
+            padding: 10px 60px 30px 60px;
+            position: relative;
+            top: 0;
+            width: 50%;
+        }
+    }
+}
+
+/**********************
+   Section: Coachella
+**********************/
+
+section.coachella {
+    flex-direction: row;
+    .img-block {
+        width: 50%;
+        img {
+            border: 50px solid $nude;
+            width: 70%;
+        }
+    }
+    .text-block {
+        margin: 0 0 0 100px;
+        padding: 0;
+        width: 50%;
+        p {
+            max-width: 520px;
+            padding: 0 150px 0 0;
+        }
+        a {
+            width: auto;
+        }
+        div.link {
+            margin-top: 25px;
+            width: 260px;
+            a {
+                padding: 20px 2px 0 0;
+                width: 260px;
+                &:hover ~ div.hover {
+                    width: 260px;
+                }
+            }
+        }
+    }
+    .slide-in {
+        margin: 0;
+    }
+}
+
+/**********************
+        Posts
+**********************/
+
+.posts {
+    height: 40vh;
+}
+
+.posts > .single:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+    height: 310px !important;
+    width: 310px !important;
+    z-index: 20 !important;
+}
+
+/**********************
+     Pop up window
+**********************/
+
+.pop-up {
+    border-radius: 5px;
+    margin: 30px auto;
+    padding: 20px;
+    width: 30%;
+    img {
+        width: 100%;
+    }
+    p {
+        font-size: 0.8em;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    .data {
+        font-size: 0.9em;
+        margin-right: 10px;
+    }
+    i {
+        font-size: 0.9em;
+        margin: 0 5px 3px 1px;
+    }
+}
+
+/**********************
+         Footer
+**********************/
+
+footer.footer {
+    .logo, .palm, .social {
+        width: 22%;
+    }
+    .logo {
+        img {
+            width: 240px;
+        }
+        p {
+            font-size: 0.68em;
+        }
+    }
+    .social {
+        font-size: 2.5em;
+    }
+    .palm {
+        svg {
+            width: 22%;
+        }
+    }
+    a.to-top {
+        padding: 12px 32px;
+    }
+}

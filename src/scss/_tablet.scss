@@ -1,0 +1,110 @@
+/**********************
+         Base
+**********************/
+
+h2 {
+    font-size: 1.8em;
+}
+
+section {
+    min-height: 100vh;
+}
+
+/**********************
+         Home
+**********************/
+
+section.home {
+    .heading {
+        h1 {
+            font-size: 3.5em;
+            padding: 80px;
+        }
+    }
+}
+
+/**********************
+     Section: Info
+**********************/
+
+section.info {
+    img {
+        height: 400px;
+        margin: 110px 0 0 5%;
+    }
+    .bg-block {
+        height: 60vh;
+        .text-block {
+            height: auto;
+            max-width: 800px;
+            padding: 3% 8% 5% 8%;
+            top: 300px;
+            width: 95%;
+        }
+        div.link {
+            margin-top: 30px;
+        }
+    }
+}
+
+/**********************
+ Top List & Most Recent
+**********************/
+
+section.top-list,
+section.most-recent {
+    padding: 5px 50px 0 50px;
+}
+
+/**********************
+     Pop up window
+**********************/
+
+.overlay::before {
+    color: #fff;
+    content: "\f057";
+    float: right;
+    font-family: 'FontAwesome';
+    font-size: 1.2em;
+    padding: 2% 2% 0 0;
+}
+.pop-up {
+    width: 40%;
+}
+
+/**********************
+   Section: Coachella
+**********************/
+
+section.coachella {
+    justify-content: center;
+    padding-top: 0;
+    .img-block, .text-block {
+        width: 70%;
+    }
+}
+/**********************
+         Footer
+**********************/
+
+footer.footer {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    padding: 50px 0;
+    position: relative;
+    .logo, .palm, .social {
+        margin: 0 auto;
+        width: 27%;
+    }
+    .logo {
+        padding-top: 25px;
+    }
+    .palm {
+        svg {
+            bottom: 37px;
+            height: 240px;
+            position: absolute;
+            width: 27%;
+        }
+    }
+}
